@@ -1,4 +1,3 @@
-# Quick-Jumpbox-AWS-FreeTier
-Quick Jumpbox using AWS Free Tier
+# Quick Jumpbox Using AWS Free Tier
 
-Test
+
