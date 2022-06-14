@@ -10,4 +10,10 @@ A jumpbox is simply an intermediate server that we use to connect to our homelab
 
 There are certainly more advanced ways to set this up (utilizing reverse proxies) but this is a quick way to connect back to your homelab (for free for 12 months) without having to expose any ports on your home network (except for the port open to OpenVPN but this is very secure if setup correctly)
 
+
+## Prerequisites
+This post assumes that you are either running PfSense OR you know how to set up a VPN connection on you respective router. I have PfSense setup on dedicated hardware but [here](https://docs.netgate.com/pfsense/en/latest/recipes/virtualize-esxi.html) is Netgate's documentation on virtualizing PfSense. 
+
+
 ## Setting up OpenVPN
+Instead of rehashing all of the stuff that's been put together already, I'll link you to a great [youtube video](https://www.youtube.com/embed/PgielyUFGeQ?autoplay=0&cc_lang_pref=en&cc_load_policy=0&color=0&controls=1&fs=1&h1=en&loop=0&rel=0) that goes over setting up OpenVPN on PfSense. 
