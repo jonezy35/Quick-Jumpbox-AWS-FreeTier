@@ -36,7 +36,9 @@ You should now be able to login to your EC2 instance (via SSH or via EC2 Instanc
 username
 password
 ```
-Then you execute the openvpn file by typing `openvpn --config your_vpn_file -f your_credential_file`
+Then you execute the openvpn file by typing `sudo openvpn --config your_vpn_file --auth-user-pass your_credential_file &` The `&` runs it in the background so you can still use your terminal.
+
+If you get the error: "Unrecognized option or missing or extra parameter(s) in ...  data-ciphers" you need to go into your ovpn file and delete the two lines `data-ciphers` and `data-ciphers-fallback`
 
 ## If you can't access EC2 via SSH or via EC2 Instance Connect
 
