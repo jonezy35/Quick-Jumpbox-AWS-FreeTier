@@ -42,4 +42,14 @@ Then you execute the openvpn file by typing `openvpn --config your_vpn_file -f y
 
 If your work proxy doesn't allow you to use EC2 Instance Connect (as mine doesn't) and you aren't able to connect via ssh, how are you supposed to connect to your EC2 instance? There is a workaround. You can access AWS CloudShell and ssh to the EC2 instance from cloudshell.
 
-1. First,
+1. First, you need to create an ssh key pair. `ssh-keygen -t ed25519`
+2. Now, you need to send the public key over to your EC2 instance `aws ec2-instance-connect send-ssh-public-key --instance-id your_instance_id --instance-os-user ec2-user --ssh-public-key file://your_key.pub`
+3. SSH to your EC2 instance
+    - Open a new tab and navigate to your instance
+    - Click connect and navigate to the ssh client tab
+    - Copu the ec2-user@ address.
+    - Run `ssh -o "IdentitesOnly=yes" -i your_key ec2-user@your_instance_address`
+4. You should now be ssh'd into your EC2 instance and can execute your OpenVPN file.
+
+## After the VPN connection is established
+Once you have the VPN connection established, you should be able to SSH to your homelab VM's as normal. 
